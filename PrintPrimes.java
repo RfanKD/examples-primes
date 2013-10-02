@@ -1,6 +1,6 @@
 public class PrintPrimes {
   int numberOfPrimes;
-  int RR;
+  int whatIsThis;
   int CC;
   int WW;
   int ORDMAX;
