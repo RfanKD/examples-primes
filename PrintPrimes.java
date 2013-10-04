@@ -74,7 +74,9 @@ public class PrintPrimes {
           System.out.println("The First " + numberOfPrimes +
                                " Prime Numbers --- Page " + pageNumber);
           System.out.println("");
-      
+          
+          printPage(int pageNumber, int pageOffset);
+          
           System.out.println("\f");
           pageNumber = pageNumber + 1;
           pageOffset = pageOffset + rowPerPage * columnPerPage;
