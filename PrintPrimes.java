@@ -70,17 +70,23 @@ public class PrintPrimes {
           System.out.println("The First " + numberOfPrimes +
                                " Prime Numbers --- Page " + pageNumber);
           System.out.println("");
-          for (int rowOffset = pageOffset; rowOffset < pageOffset + rowPerPage; rowOffset++){
-            for (int C = 0; C < columnPerPage;C++)
-              if (rowOffset + C * rowPerPage <= numberOfPrimes)
-                System.out.format("%10d", listOfPrimes[rowOffset + C * rowPerPage]);
-            System.out.println("");
-          }
+      
           System.out.println("\f");
           pageNumber = pageNumber + 1;
           pageOffset = pageOffset + rowPerPage * columnPerPage;
         }
     }
+    
+    public void printPage(int pageNumber, int pageOffset){
+    	for (int rowOffset = pageOffset; rowOffset < pageOffset + rowPerPage; rowOffset++){
+            for (int C = 0; C < columnPerPage;C++)
+              if (rowOffset + C * rowPerPage <= numberOfPrimes)
+                System.out.format("%10d", listOfPrimes[rowOffset + C * rowPerPage]);
+            System.out.println("");
+          }
+    }
+    	
+    
 }
 
 					 
