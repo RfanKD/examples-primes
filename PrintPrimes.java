@@ -16,9 +16,12 @@ public class PrintPrimes {
 
   public static void main(String[] args) {
       
-      int 	
-  	
-      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 30);
+      int numberOfPrime = 300 ;
+      int rowPerPage = 50 ;
+      int columnPerPage = 30 ;
+      int maxNumberOfReferencePoints = 30 ;
+      	
+      PrintPrimes printPrimes = new PrintPrimes(numberOfPrime, rowPerPage, columnPerPage, maxNumberOfReferencePoints);
       printPrimes.calculatePrimes();
       printPrimes.printPrimes();
   }
