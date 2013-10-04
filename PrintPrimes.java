@@ -1,23 +1,24 @@
 public class PrintPrimes {
-  final int numberOfPrimes;
-  final int rowPerPage ;
-  final int columnPerPage ;
-  int WW;
-  int ORDMAX;
+  final int NUMBER_OF_PRIME
+  final int ROWS_PER_PAGE ;
+  final int COLUMNS_PER_PAGE ;
+  int maxNumberOfReferencePoints;
   int listOfPrimes[];
 
-  public PrintPrimes(int numberOfPrimes, int row, int col, int WW, int ORDMAX) {
+  public PrintPrimes(int numberOfPrimes, int row, int col, int ORDMAX) {
     this.numberOfPrimes   = numberOfPrimes;
     this.rowPerPage  = row;
     this.columnPerPage  = col;
-    this.WW  = WW;
-    this.ORDMAX = ORDMAX;
+    this.maxNumberOfReferencePoints = ORDMAX;
     this.listOfPrimes = new int[numberOfPrimes + 1];
   }
 
 
   public static void main(String[] args) {
-      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 10, 30);
+      
+      int 	
+  	
+      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 30);
       printPrimes.calculatePrimes();
       printPrimes.printPrimes();
   }
@@ -34,29 +35,29 @@ public class PrintPrimes {
 
   private void calculateOddPrimes() {
       boolean notPrime;
-      int N;
-      int MULT[] = new int[ORDMAX + 1];
+      int positionOfReferencePoint;
+      int listOfSquaredPrimeNumbers[] = new int[maxNumberOfReferencePoints + 1];
 
       int candidate = 1;
-      int ORD = 2;
+      int cursorNumber = 2;
       int SQUARE = 9;
 
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
         do {
           candidate = candidate + 2;
           if (sampleNumber == SQUARE) {
-            ORD = ORD + 1;
-            SQUARE = listOfPrimes[ORD] * listOfPrimes[ORD];
-            MULT[ORD - 1] = candidate;
+            cursorNumber = cursorNumber + 1;
+            SQUARE = listOfPrimes[cursorNumber] * listOfPrimes[cursorNumber];
+            listOfSquaredPrimeNumbers[cursorNumber - 1] = candidate;
           }
-          N = 2;
+          positionOfReferencePoint = 2;
           notPrime = true;
-          while (N < ORD && notPrime) {
-            while (MULT[N] < candidate)
-              MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
-            if (MULT[N] == candidate)
+          while (positionOfReferencePoint < cursorNumber && notPrime) {
+            while (listOfSquaredPrimeNumbers[N] < candidate)
+              listOfSquaredPrimeNumbers[N] = listOfSquaredPrimeNumbers[positionOfReferencePoint] + listOfPrimes[positionOfReferencePoint] + listOfPrimes[positionOfReferencePoint];
+            if (listOfSquaredPrimeNumbers[N] == candidate)
               notPrime = false;
-            N = N + 1;
+            positionOfReferencePoint = positionOfReferencePoint + 1;
           }
         } while (!notPrime);
         listOfPrimes[primesFoundSoFar] = candidate;
