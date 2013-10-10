@@ -4,6 +4,7 @@ public class PrintPrimes {
   final int COLUMNS_PER_PAGE ;
   int maxNumberOfReferencePoints;
   int listOfPrimes[];
+  String test = "test";
 
   public PrintPrimes(int numberOfPrimes, int row, int col, int ORDMAX) {
     this.numberOfPrimes   = numberOfPrimes;
